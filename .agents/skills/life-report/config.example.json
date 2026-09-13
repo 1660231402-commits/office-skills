@@ -1,0 +1,12 @@
+{
+  "smtp": {
+    "host": "smtp.qq.com",
+    "port": 465,
+    "ssl": true,
+    "starttls": false,
+    "username": "your_email@qq.com",
+    "password": "在这里填入你的SMTP授权码（不是邮箱登录密码）",
+    "sender_name": "生活复盘助手"
+  },
+  "to": ["your_email@qq.com"]
+}
