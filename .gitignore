@@ -1,0 +1,8 @@
+# 隐私与本地数据：绝不提交
+config.json
+data/
+*.eml
+
+# 系统杂项
+Thumbs.db
+Desktop.ini
