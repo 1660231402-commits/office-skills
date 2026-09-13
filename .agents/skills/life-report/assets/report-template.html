@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+  生活复盘报告模板（life-report skill）· 黑白报刊编辑风
+  用法：把本文件复制到 data/reports/<tag>.html，逐个替换 {{...}} 占位符，然后删除本段注释。
+  占位符说明：
+    {{TITLE}}        报告大标题，如：生活日报
+    {{TYPE}}         报告类型：日报 / 周报 / 月报 / 半年报 / 年报
+    {{PERIOD}}       覆盖期间，如：2026-09-12 或 2026-09-07 ~ 09-13
+    {{GENERATED_AT}} 生成时间，如：2026-09-13 08:00
+    {{TOTAL_DAYS}}   本期有记录的天数
+    {{KEY_COUNT}} {{GOOD_COUNT}} {{BAD_COUNT}}   重点/好事/坏事 条数
+    {{KEY_EVENTS}} {{GOOD_THINGS}} {{BAD_THINGS}}  对应小节的列表（见下方列表规范）
+    {{ANALYSIS_HTML}}  分析与改善建议（<p> 段落 + "改善建议"竖线列表，见下方列表规范）
+    {{QUOTE_TEXT}}     名言正文
+    {{QUOTE_AUTHOR}}   名言作者
+    {{QUOTE_NOTE}}     一句话把名言和本期内容关联起来
+    {{NEXT_HINT}}      下一期报告预告，如：明早 8:00 将发送 09-13 的日报
+  列表规范（小节列表，序号 01/02/… 递增，无内容时只写一行"本期无记录"）：
+    <ul style="list-style:none;margin:12px 0 0;padding:0;">
+      <li style="list-style:none;padding:11px 2px;border-bottom:1px solid #efefef;font-size:14px;line-height:1.9;"><span style="color:#b3b3ae;font-family:Georgia,'Songti SC',SimSun,serif;margin-right:12px;">01</span>内容</li>
+    </ul>
+  改善建议列表（放在 {{ANALYSIS_HTML}} 末尾）：
+    <ul style="list-style:none;margin:8px 0 0;padding:0;">
+      <li style="margin:6px 0;padding:7px 0 7px 14px;border-left:2px solid #111111;font-size:14px;line-height:1.9;">内容</li>
+    </ul>
+  替换完成后删除本注释。
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}} · {{PERIOD}}</title>
+</head>
+<body style="margin:0;padding:36px 16px;background:#f2f2f0;font-family:'Helvetica Neue','PingFang SC','Microsoft YaHei','Segoe UI',sans-serif;color:#18181b;">
+<div style="max-width:680px;margin:0 auto;background:#ffffff;border:1px solid #e0e0dd;">
+
+  <div style="background:#111111;padding:40px 44px 34px;color:#ffffff;">
+    <div style="font-size:10px;letter-spacing:6px;color:#9ca3af;">LIFE REPORT &middot; {{TYPE}}</div>
+    <div style="font-size:32px;font-weight:700;letter-spacing:10px;margin-top:16px;">{{TITLE}}</div>
+    <div style="font-size:12px;color:#d1d5db;margin-top:16px;letter-spacing:1px;">覆盖期间&nbsp;&nbsp;{{PERIOD}}</div>
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:2px solid #111111;border-bottom:1px solid #111111;background:#fafafa;">
+    <tr>
+      <td style="width:25%;text-align:center;padding:20px 0 17px;border-right:1px solid #d4d4d8;">
+        <div style="font-size:24px;font-weight:700;font-family:Georgia,'Songti SC',SimSun,serif;">{{TOTAL_DAYS}}</div>
+        <div style="font-size:10px;color:#52525b;letter-spacing:3px;margin-top:6px;">记录天数</div>
+      </td>
+      <td style="width:25%;text-align:center;padding:20px 0 17px;border-right:1px solid #d4d4d8;">
+        <div style="font-size:24px;font-weight:700;font-family:Georgia,'Songti SC',SimSun,serif;">{{KEY_COUNT}}</div>
+        <div style="font-size:10px;color:#52525b;letter-spacing:3px;margin-top:6px;">重点事件</div>
+      </td>
+      <td style="width:25%;text-align:center;padding:20px 0 17px;border-right:1px solid #d4d4d8;">
+        <div style="font-size:24px;font-weight:700;font-family:Georgia,'Songti SC',SimSun,serif;">{{GOOD_COUNT}}</div>
+        <div style="font-size:10px;color:#52525b;letter-spacing:3px;margin-top:6px;">好事情</div>
+      </td>
+      <td style="width:25%;text-align:center;padding:20px 0 17px;">
+        <div style="font-size:24px;font-weight:700;font-family:Georgia,'Songti SC',SimSun,serif;">{{BAD_COUNT}}</div>
+        <div style="font-size:10px;color:#52525b;letter-spacing:3px;margin-top:6px;">坏事情</div>
+      </td>
+    </tr>
+  </table>
+
+  <div style="padding:10px 44px 38px;">
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:32px 0 0;">
+      <tr>
+        <td style="white-space:nowrap;padding-bottom:7px;">
+          <span style="font-family:Georgia,'Songti SC',SimSun,serif;font-size:15px;font-weight:700;">01</span>
+          <span style="font-size:16px;font-weight:600;letter-spacing:2px;margin-left:12px;">重点事件记录</span>
+        </td>
+        <td style="border-bottom:1px solid #111111;font-size:1px;line-height:1;width:96%;vertical-align:bottom;">&nbsp;</td>
+      </tr>
+    </table>
+    <ul style="list-style:none;margin:12px 0 0;padding:0;">{{KEY_EVENTS}}</ul>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:32px 0 0;">
+      <tr>
+        <td style="white-space:nowrap;padding-bottom:7px;">
+          <span style="font-family:Georgia,'Songti SC',SimSun,serif;font-size:15px;font-weight:700;">02</span>
+          <span style="font-size:16px;font-weight:600;letter-spacing:2px;margin-left:12px;">好事情</span>
+        </td>
+        <td style="border-bottom:1px solid #111111;font-size:1px;line-height:1;width:96%;vertical-align:bottom;">&nbsp;</td>
+      </tr>
+    </table>
+    <ul style="list-style:none;margin:12px 0 0;padding:0;">{{GOOD_THINGS}}</ul>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:32px 0 0;">
+      <tr>
+        <td style="white-space:nowrap;padding-bottom:7px;">
+          <span style="font-family:Georgia,'Songti SC',SimSun,serif;font-size:15px;font-weight:700;">03</span>
+          <span style="font-size:16px;font-weight:600;letter-spacing:2px;margin-left:12px;">坏事情与挑战</span>
+        </td>
+        <td style="border-bottom:1px solid #111111;font-size:1px;line-height:1;width:96%;vertical-align:bottom;">&nbsp;</td>
+      </tr>
+    </table>
+    <ul style="list-style:none;margin:12px 0 0;padding:0;">{{BAD_THINGS}}</ul>
+    <div style="font-size:12px;color:#a1a1aa;margin-top:10px;">每一件不顺利的事，都藏着下一次做得更好的线索。</div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:32px 0 0;">
+      <tr>
+        <td style="white-space:nowrap;padding-bottom:7px;">
+          <span style="font-family:Georgia,'Songti SC',SimSun,serif;font-size:15px;font-weight:700;">04</span>
+          <span style="font-size:16px;font-weight:600;letter-spacing:2px;margin-left:12px;">这段时间的分析与改善建议</span>
+        </td>
+        <td style="border-bottom:1px solid #111111;font-size:1px;line-height:1;width:96%;vertical-align:bottom;">&nbsp;</td>
+      </tr>
+    </table>
+    <div style="margin-top:14px;line-height:2;font-size:14px;">{{ANALYSIS_HTML}}</div>
+
+    <div style="margin-top:32px;background:#fafafa;border:1px solid #e5e5e5;padding:28px 24px 24px;text-align:center;">
+      <div style="font-family:Georgia,'Times New Roman','Songti SC',SimSun,serif;font-size:52px;color:#111111;line-height:12px;height:22px;">&ldquo;</div>
+      <div style="font-family:Georgia,'Songti SC',SimSun,serif;font-size:17px;line-height:2;margin-top:12px;">{{QUOTE_TEXT}}</div>
+      <div style="font-size:12px;color:#71717a;margin-top:14px;letter-spacing:3px;">&mdash;&mdash; {{QUOTE_AUTHOR}}</div>
+      <div style="font-size:12px;color:#a1a1aa;margin-top:10px;">{{QUOTE_NOTE}}</div>
+    </div>
+
+  </div>
+
+  <div style="padding:18px 44px 22px;border-top:1px solid #e5e5e5;background:#fafafa;">
+    <div style="font-size:12px;color:#52525b;">{{NEXT_HINT}}</div>
+    <div style="font-size:11px;color:#a1a1aa;margin-top:6px;">生成于 {{GENERATED_AT}} &middot; 由 ZCode &middot; life-report 自动生成</div>
+  </div>
+
+</div>
+</body>
+</html>
